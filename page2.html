@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Page 2 - Display Values</h2>
+
+    <table>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+            <th>Column 4</th>
+            <th>Column 5</th>
+        </tr>
+        <tr>
+            <td id="row1col1"></td>
+            <td id="row1col2"></td>
+            <td id="row1col3"></td>
+            <td id="row1col4"></td>
+            <td id="row1col5"></td>
+        </tr>
+        <tr>
+            <td id="row2col1"></td>
+            <td id="row2col2"></td>
+            <td id="row2col3"></td>
+            <td id="row2col4"></td>
+            <td id="row2col5"></td>
+        </tr>
+    </table>
+
+    <script>
+        // Read values from localStorage and display them
+        function displayValues() {
+            document.getElementById("row1col1").innerText = decodeURIComponent(localStorage.getItem('row1col1')) || '';
+            document.getElementById("row1col2").innerText = decodeURIComponent(localStorage.getItem('row1col2')) || '';
+            document.getElementById("row1col3").innerText = decodeURIComponent(localStorage.getItem('row1col3')) || '';
+            document.getElementById("row1col4").innerText = decodeURIComponent(localStorage.getItem('row1col4')) || '';
+            document.getElementById("row1col5").innerText = decodeURIComponent(localStorage.getItem('row1col5')) || '';
+
+            document.getElementById("row2col1").innerText = decodeURIComponent(localStorage.getItem('row2col1')) || '';
+            document.getElementById("row2col2").innerText = decodeURIComponent(localStorage.getItem('row2col2')) || '';
+            document.getElementById("row2col3").innerText = decodeURIComponent(localStorage.getItem('row2col3')) || '';
+            document.getElementById("row2col4").innerText = decodeURIComponent(localStorage.getItem('row2col4')) || '';
+            document.getElementById("row2col5").innerText = decodeURIComponent(localStorage.getItem('row2col5')) || '';
+        }
+
+        // Call the displayValues function on page load
+        displayValues();
+
+        // Add event listener for changes in the localStorage
+        window.addEventListener('storage', function () {
+            displayValues();
+        });
+    </script>
+
+</body>
+</html>
